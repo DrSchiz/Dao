@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<table class="table table-striped">
+    <h2>Оборудования</h2>
+    <thead>
+    <tr>
+        <th scope="col">Название</th>
+        <th scope="col">Тип</th>
+        <th scope="col">Размер</th>
+        <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <div th:each="equipment : ${equipments}">
+        <tr>
+            <td th:text="${equipment.getName()}"></td>
+            <td th:text="${equipment.getType()}"></td>
+            <td th:text="${equipment.getSize()}"></td>
+            <td>
+                <a th:href="@{/equipment/{id}(id=${equipment.getId()})}">Перейти</a>
+            </td>
+        </tr>
+    </div>
+    </tbody>
+</table>
+<form action="/create-equipment" method="get">
+    <button class="btn btn-secondary">Создать оборудование</button>
+</form>
+</body>
+</html>

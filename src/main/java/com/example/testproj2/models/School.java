@@ -1,9 +1,15 @@
 package com.example.testproj2.models;
 
+import org.springframework.lang.NonNull;
+
 public class School {
     private int Id;
     private String Name;
     private String Adress;
+
+    public School() {
+
+    }
 
     public int getId() {
         return Id;
@@ -29,20 +35,20 @@ public class School {
         Adress = adress;
     }
 
-    public int getAmountOfChildren() {
-        return amountOfChildren;
+    public int getAmountStudents() {
+        return AmountStudents;
     }
 
-    public void setAmountOfChildren(int amountOfChildren) {
-        this.amountOfChildren = amountOfChildren;
+    public void setAmountStudents(int amountStudents) {
+        AmountStudents = amountStudents;
     }
 
-    public School(int id, String name, String adress, int amountOfChildren) {
+    public School(int id, String name, String adress, int amountStudents) {
         Id = id;
         Name = name;
         Adress = adress;
-        this.amountOfChildren = amountOfChildren;
+        AmountStudents = amountStudents;
     }
 
-    private int amountOfChildren;
+    private int AmountStudents;
 }

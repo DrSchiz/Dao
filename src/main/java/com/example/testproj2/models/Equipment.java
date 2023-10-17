@@ -6,6 +6,10 @@ public class Equipment {
     private String Type;
     private int Size;
 
+    public Equipment() {
+
+    }
+
     public int getId() {
         return Id;
     }

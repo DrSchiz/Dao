@@ -6,6 +6,10 @@ public class Car {
     private String Number;
     private boolean isSold;
 
+    public Car() {
+
+    }
+
     public int getId() {
         return Id;
     }

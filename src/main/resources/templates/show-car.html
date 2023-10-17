@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="patch" th:action="@{/car/{id}(id=${car.getId()})}" th:object="${car}">
+    <div style="display: flex; flex-direction: column">
+        <label for="model">Модель:</label>
+        <input type="text" class="form-control" th:field="*{model}" id="model"/>
+        <label for="number">Номер:</label>
+        <input type="text" class="form-control" th:field="*{number}" id="number"/>
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit">изменить</button>
+</form>
+<br>
+<form th:method="delete" th:action="@{/car/{id}(id=${car.getId()})}">
+    <button class="btn btn-danger" type="submit">удалить</button>
+</form>
+</body>
+</html>

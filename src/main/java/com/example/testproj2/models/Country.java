@@ -6,6 +6,10 @@ public class Country {
     private int amountOfNuclearWeapons;
     private String Leader;
 
+    public Country() {
+
+    }
+
     public int getId() {
         return Id;
     }

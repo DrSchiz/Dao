@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Title</title>
+</head>
+<body>
+<form th:method="patch" th:action="@{/country/{id}(id=${country.getId()})}" th:object="${country}">
+    <div style="display: flex; flex-direction: column">
+        <label for="name">Название:</label>
+        <input type="text" class="form-control" th:field="*{name}" id="name"/>
+        <label for="amountOfNuclearWeapons">Количество ядерного оружия:</label>
+        <input type="text" class="form-control" th:field="*{amountOfNuclearWeapons}" id="amountOfNuclearWeapons"/>
+        <label for="leader">Лидер:</label>
+        <input type="text" class="form-control" th:field="*{leader}" id="leader"/>
+    </div>
+    <br>
+    <button class="btn btn-primary" type="submit">изменить</button>
+</form>
+<br>
+<form th:method="delete" th:action="@{/country/{id}(id=${country.getId()})}">
+    <button class="btn btn-danger" type="submit">удалить</button>
+</form>
+</body>
+</html>
