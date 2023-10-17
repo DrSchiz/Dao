@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:each="user : ${users}">
+        <a th:href="@{/{id}(id=${user.getId()})}" th:text="${user.getLogin()}">user</a>
+    </div>
+    <form action="/create" method="get">
+        <button>Создать пользователя</button>
+    </form>
+</body>
+</html>
